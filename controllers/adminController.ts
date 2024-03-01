@@ -51,7 +51,7 @@ const login = async (req: Request, res: Response) => {
 	}
 };
 
-// Forgot Password
+// Forgot  sPassword
 const forgotPassword = async (req: Request, res: Response) => {
 	const { email } = req.body;
 
