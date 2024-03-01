@@ -1,0 +1,22 @@
+import jwt from 'jsonwebtoken';
+
+interface ResetTokenInput {
+	email: string;
+}
+
+const generateResetToken = ({ email }: ResetTokenInput): string => {
+	const secretKey = 'yourResetSecretKey';
+
+	const resetToken = jwt.sign(
+		{
+			email: email,
+			// You can add additional information here if needed
+		},
+		secretKey,
+		{ expiresIn: '1h' } // Set the reset token expiration time as needed
+	);
+
+	return resetToken;
+};
+
+export default generateResetToken;
