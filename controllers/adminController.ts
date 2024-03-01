@@ -51,6 +51,32 @@ const login = async (req: Request, res: Response) => {
 	}
 };
 
+// getSingleAdmin
+const getSingleAdmin = async (req: Request, res: Response) => {
+	const { id } = req.params;
+
+	try {
+		const user = await Admin.findById(id);
+
+		if (!user) {
+			return res.status(404).json({
+				success: false,
+				message: 'Admin not found',
+			});
+		}
+
+		res.status(200).json({
+			success: true,
+			user,
+		});
+	} catch (error) {
+		res.status(500).json({
+			success: false,
+			message: 'Internal server error',
+		});
+	}
+};
+
 // Forgot  sPassword
 const forgotPassword = async (req: Request, res: Response) => {
 	const { email } = req.body;
@@ -110,32 +136,6 @@ const resetPassword = async (req: Request, res: Response) => {
 				success: true,
 				message: 'Password reset successful',
 			});
-		});
-	} catch (error) {
-		res.status(500).json({
-			success: false,
-			message: 'Internal server error',
-		});
-	}
-};
-
-// getSingleAdmin
-const getSingleAdmin = async (req: Request, res: Response) => {
-	const { id } = req.params;
-
-	try {
-		const user = await Admin.findById(id);
-
-		if (!user) {
-			return res.status(404).json({
-				success: false,
-				message: 'Admin not found',
-			});
-		}
-
-		res.status(200).json({
-			success: true,
-			user,
 		});
 	} catch (error) {
 		res.status(500).json({
