@@ -6,7 +6,7 @@ import nodemailer from 'nodemailer';
 import jwt from 'jsonwebtoken';
 import generateToken from '../utils/generateToken';
 
-// Register Admin
+// Register Admin api
 const register = async (req: Request, res: Response) => {
 	const { username, email, password } = req.body;
 
@@ -31,7 +31,7 @@ const register = async (req: Request, res: Response) => {
 	}
 };
 
-// Login Admin
+// Login Admin api
 const login = async (req: Request, res: Response) => {
 	const { email, password } = req.body;
 	try {
