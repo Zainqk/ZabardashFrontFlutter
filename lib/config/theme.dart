@@ -2,11 +2,17 @@ import 'package:flutter/material.dart';
 
 ThemeData theme() {
   return ThemeData(
-    primaryColor: const Color(0x009dd908),
-    primaryColorLight: const Color(0x00e7fcb0),
-    primaryColorDark: const Color(0x0082af11),
+    primaryColor: Color.fromARGB(255, 158, 217, 8),
+    primaryColorLight: Color.fromARGB(255, 230, 252, 176),
+    primaryColorDark: Color.fromARGB(255, 130, 175, 17),
+    highlightColor: Color.fromARGB(255, 230, 252, 176),
+    hintColor: Color.fromARGB(255, 158, 217, 8),
+    focusColor: Color.fromARGB(255, 158, 217, 8),
+    
     scaffoldBackgroundColor: Colors.white,
     textTheme: const TextTheme(
+      labelMedium: TextStyle(
+          color: Colors.black, fontWeight: FontWeight.bold, fontSize: 13),
       headlineLarge: TextStyle(
         color: Colors.black,
         fontWeight: FontWeight.bold,
