@@ -4,21 +4,23 @@ import 'package:zabardash/widgets/auth_button.dart';
 
 import 'package:zabardash/widgets/text_form_field.dart';
 
-class LoginScreen extends StatelessWidget {
-  static const String routeName = '/login';
+class RegistrationScreen extends StatelessWidget {
+  static const String routeName = '/register';
 
   static Route route() {
     return MaterialPageRoute(
-        builder: (_) => const LoginScreen(),
+        builder: (_) => const RegistrationScreen(),
         settings: const RouteSettings(name: routeName));
   }
 
-  const LoginScreen({super.key});
+  const RegistrationScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     TextEditingController emailController = TextEditingController();
     TextEditingController passwordController = TextEditingController();
+    TextEditingController userNameController = TextEditingController();
+    TextEditingController phoneNumberController = TextEditingController();
     return Scaffold(
         body: SafeArea(
       child: Padding(
@@ -33,11 +35,11 @@ class LoginScreen extends StatelessWidget {
                   height: 100,
                 ),
                 Text(
-                  'Welcome Back',
+                  'Get Started',
                   style: Theme.of(context).textTheme.headlineMedium,
                 ),
                 Text(
-                  'Please Log in to continue',
+                  "You'll receive order updates & receipts",
                   style: Theme.of(context)
                       .textTheme
                       .headlineSmall!
@@ -47,74 +49,56 @@ class LoginScreen extends StatelessWidget {
                   height: 30,
                 ),
                 AuthFormField(
-                  fieldController: emailController,
-                  hintText: 'example@gmail.com',
-                  labelText: 'E-mail',
+                  hintText: 'Enter your name',
+                  labelText: 'Name',
+                  fieldController: userNameController,
                   isPassword: false,
                 ),
                 const SizedBox(
-                  height: 20,
+                  height: 25,
                 ),
                 AuthFormField(
-                  fieldController: passwordController,
+                  hintText: "(+1) | 123-4567",
+                  labelText: 'Phone Number',
+                  fieldController: phoneNumberController,
+                  isPassword: false,
+                ),
+                const SizedBox(
+                  height: 25,
+                ),
+                AuthFormField(
+                  hintText: 'example@gmail.com',
+                  labelText: 'Email',
+                  fieldController: emailController,
+                  isPassword: false,
+                ),
+                const SizedBox(
+                  height: 25,
+                ),
+                AuthFormField(
                   hintText: 'Enter your password',
                   labelText: 'Password',
+                  fieldController: passwordController,
                   isPassword: true,
                 ),
-                Align(
-                  alignment: Alignment.centerRight,
-                  child: TextButton(
-                    onPressed: () {
-                      Navigator.of(context).pushNamedAndRemoveUntil(
-                          '/forgotPassword', (route) => true);
-                    },
-                    child: const Text(
-                      'Forgot Password?',
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ),
-                ),
                 const SizedBox(
-                  height: 30,
+                  height: 45,
                 ),
                 const AuthBtn(
-                  labelText: 'Login',
+                  labelText: 'Continue',
                 ),
-                const SizedBox(
-                  height: 50,
-                ),
-                const Row(children: [
-                  Expanded(
-                    child: Divider(
-                      color: Colors.black,
-                    ),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 8.0),
-                    child: Text(
-                      "Or Login With",
-                      style:
-                          TextStyle(fontWeight: FontWeight.bold, fontSize: 12),
-                    ),
-                  ),
-                  Expanded(
-                      child: Divider(
-                    color: Colors.black,
-                  )),
-                ]),
                 Expanded(
                   child: Align(
                     alignment: Alignment.bottomCenter,
                     child: Padding(
-                      padding: const EdgeInsets.only(bottom: 55),
+                      padding: const EdgeInsets.only(
+                        bottom: 55,
+                      ),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           const Text(
-                            "Don't Have An Account?",
+                            "Already Have An Account?",
                             style: TextStyle(
                               fontWeight: FontWeight.w500,
                               fontSize: 13,
@@ -124,11 +108,11 @@ class LoginScreen extends StatelessWidget {
                             onPressed: () {
                               Navigator.pushNamed(
                                 context,
-                                '/register',
+                                '/login',
                               );
                             },
                             child: Text(
-                              'Click Here',
+                              'Login',
                               style: TextStyle(
                                   fontWeight: FontWeight.bold,
                                   fontSize: 12,
@@ -139,7 +123,7 @@ class LoginScreen extends StatelessWidget {
                       ),
                     ),
                   ),
-                )
+                ),
               ],
             ),
           ),
