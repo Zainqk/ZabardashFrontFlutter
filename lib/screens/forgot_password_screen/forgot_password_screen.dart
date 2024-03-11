@@ -18,9 +18,6 @@ class ForgotPasswordScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     TextEditingController emailController = TextEditingController();
-    TextEditingController passwordController = TextEditingController();
-    TextEditingController userNameController = TextEditingController();
-    TextEditingController phoneNumberController = TextEditingController();
     return Scaffold(
         body: SafeArea(
       child: Padding(
@@ -52,10 +49,11 @@ class ForgotPasswordScreen extends StatelessWidget {
                   ),
                 ),
                 AuthFormField(
-                    hintText: 'example@gmail.com',
-                    labelText: 'email',
-                    fieldController: emailController,
-                    isPassword: false),
+                  hintText: 'example@gmail.com',
+                  labelText: 'Email',
+                  fieldController: emailController,
+                  isPassword: false,
+                ),
                 const SizedBox(height: 40),
                 const AuthBtn(labelText: 'Continue'),
               ],

@@ -14,6 +14,30 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.black,
+      ),
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              Container(
+                child: TextFormField(
+                  decoration: InputDecoration(
+                    prefix: IconButton(
+                      icon: const Icon(
+                        Icons.search,
+                        color: Colors.grey,
+                      ),
+                      onPressed: () {},
+                    ),
+                  ),
+                ),
+              )
+            ],
+          ),
+        ),
+      ),
     );
   }
 }
