@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:zabardash/config/app_router.dart';
 import 'package:zabardash/config/theme.dart';
 import 'package:zabardash/screens/home/home_screen.dart';
-
 import 'package:zabardash/screens/login/login_screen.dart';
 
 void main() {

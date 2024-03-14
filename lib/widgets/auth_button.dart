@@ -11,8 +11,9 @@ class AuthBtn extends StatelessWidget {
     return Container(
       width: double.maxFinite,
       decoration: BoxDecoration(
-          color: Theme.of(context).primaryColorDark,
-          borderRadius: BorderRadius.circular(30)),
+        color: Theme.of(context).primaryColorDark,
+        borderRadius: BorderRadius.circular(30),
+      ),
       child: TextButton(
         onPressed: () {},
         child: Text(

@@ -1,5 +1,5 @@
 class Customer {
-  final String id;
+  final int id;
   final String username;
   final String email;
   final String password;
@@ -17,7 +17,7 @@ class Customer {
     );
   }
 
-  Map<String, dynamic> toJson() {
+  Map<String, dynamic> toMap() {
     return {
       'id': id,
       'username': username,

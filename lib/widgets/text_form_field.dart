@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 class AuthFormField extends StatefulWidget {
+  
   const AuthFormField({
     super.key,
     required this.hintText,
@@ -16,6 +17,7 @@ class AuthFormField extends StatefulWidget {
 
   @override
   State<AuthFormField> createState() => _AuthFormFieldState();
+
 }
 
 class _AuthFormFieldState extends State<AuthFormField> {
