@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 
 AppBar buildAppBar() {
   return AppBar(
-    backgroundColor: Colors.white, // Background color of the app bar
-    elevation: 0, // No shadow
+    backgroundColor: Colors.white,
+    elevation: 0, 
+    
     actions: [
       IconButton(
         onPressed: () {
