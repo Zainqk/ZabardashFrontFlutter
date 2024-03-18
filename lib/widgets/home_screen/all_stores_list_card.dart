@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
-class FeaturedStoreListCard extends StatelessWidget {
-  const FeaturedStoreListCard({
+class AllStoresListCard extends StatelessWidget {
+  const AllStoresListCard({
     super.key,
   });
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.only(right: 15),
+      padding: const EdgeInsets.only(right: 15, bottom: 15),
+      width: double.maxFinite,
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        
         children: [
           //image stack
           Container(
@@ -23,14 +23,14 @@ class FeaturedStoreListCard extends StatelessWidget {
                   child: Image.network(
                     'https://firebasestorage.googleapis.com/v0/b/the-chat-app-363a8.appspot.com/o/wajih?alt=media&token=70aba84c-bab1-4ca0-a70e-b51240ca0998',
                     fit: BoxFit.fill,
-                    width: 150,
+                    width: double.maxFinite,
                     height: 150,
                   ),
                 ),
 
                 Positioned(
-                  top: 7,
-                  right: 7,
+                  top: 8,
+                  right: 8,
                   child: Container(
                     width: 30,
                     height: 30,
@@ -45,7 +45,7 @@ class FeaturedStoreListCard extends StatelessWidget {
                     ),
                   ),
                 ),
-
+                // Green box on top left corner
                 Positioned(
                   child: ClipRRect(
                     borderRadius: BorderRadius.only(
@@ -57,7 +57,7 @@ class FeaturedStoreListCard extends StatelessWidget {
                           EdgeInsets.symmetric(horizontal: 15, vertical: 4),
                       color: Theme.of(context).primaryColorDark,
                       child: Text(
-                        'New',
+                        'Most Visited',
                         style: TextStyle(
                           color: Colors.white,
                           fontSize: 12,
@@ -70,22 +70,43 @@ class FeaturedStoreListCard extends StatelessWidget {
             ),
           ),
           //Name and rating Text
-
-          Align(
-            alignment: Alignment.centerLeft,
-            child: Text(
-              'Price Cutter',
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 15,
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                'Trader Joe\'s',
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
               ),
-            ),
+              Align(
+                alignment: Alignment.centerRight,
+                child: Row(
+                  children: [
+                    Icon(
+                      Icons.star,
+                      color: Colors.amber,
+                    ),
+                    SizedBox(width: 4),
+                    Text(
+                      '4.6',
+                      style:
+                          TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
+                    ),
+                    SizedBox(width: 4),
+                    Text(
+                      '(1000+)',
+                      style: TextStyle(
+                        color: Colors.grey[600],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
           ),
-
           Align(
             alignment: Alignment.centerLeft,
             child: Text(
-              'Spring Field, MO, US',
+              'Walnut Creek, CA, United States',
               style: TextStyle(
                 color: Colors.grey[600],
                 fontSize: 12,
